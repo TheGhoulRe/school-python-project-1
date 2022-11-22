@@ -28,7 +28,7 @@ If you get an error running `python` or `python3`, or you don't get `Python 3.x.
 
 To get this application running the first thing you need to do is install `tkinter` on your system. Tkinter is a libary for building graphical user interfaces in 3. If you don't have it installed in your system, run the following command to install it:
 ```bash
-pip install tkinter
+pip install tk
 ```
 
 When everything is set up, run the following command to start the application:
