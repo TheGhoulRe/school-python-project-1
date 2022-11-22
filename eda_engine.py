@@ -1,6 +1,3 @@
-from student_form import StudentForm
-from tkinter import Label, Listbox
-
 class EDAEngine:
     def __init__(self, exploratory_analysis, students_above_70, student_form):
         self.exploratory_analysis = exploratory_analysis
@@ -22,7 +19,8 @@ class EDAEngine:
     
     def display_list(self, s_above_70):
         students_above_70 = self.students_above_70
-
+        
+        students_above_70.delete("0", "end")
         students_above_70.insert("end", "Students above 70:")
         students_above_70.insert("end", "")
         for s in s_above_70:

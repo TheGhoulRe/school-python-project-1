@@ -2,7 +2,7 @@ import csv
 import os
 
 class StudentForm:
-    def __init__(self, filepath: str, name, mat_no, score):
+    def __init__(self, filepath, name, mat_no, score):
         self.name = name
         self.mat_no = mat_no
         self.score = score
