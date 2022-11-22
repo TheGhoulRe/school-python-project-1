@@ -24,9 +24,13 @@ class StudentForm:
         score  = self.score.get("1.0", "end-1c")
         line   = f'{name},{mat_no},{score}\n'
         file   = open(self.filepath, "a")
-
         file.write(line)
         file.close()
+
+        # clear input boxes
+        self.name.delete("1.0", "end-1c")
+        self.mat_no.delete("1.0", "end-1c")
+        self.score.delete("1.0", "end-1c")
     
     def get_all_student_data(self):
         file       = open(self.filepath, "r")
