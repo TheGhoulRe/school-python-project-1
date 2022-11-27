@@ -1,47 +1,42 @@
 import csv
 import os
 
-class StudentForm:
-    def __init__(self, filepath, name, mat_no, score):
-        self.name = name
-        self.mat_no = mat_no
-        self.score = score
-        self.filepath = filepath
-        self.setup_filepath()
-    
-    def setup_filepath(self):
-        filepath = self.filepath
+def get_all_student_data():
+    file       = open("students.csv", "r")
+    csv_reader = csv.reader(file)
+    data       = []
 
-        # if file doesn't exist, create a new one
-        if not os.path.exists(filepath):
-            file = open(filepath, "w")
-            file.write("Full name,Matric No.,Score\n")
-            file.close()
+    # ignore header
+    next( csv_reader )
+
+    for row in csv_reader: data.append(row)
+    file.close()
+    return data
+
+def create_add_student(name_widget, mat_no_widget, score_widget):
+    filepath = "students.csv"
+
+    if not os.path.exists(filepath):
+        setup_filepath()
     
-    def add_student(self):
-        name   = self.name.get("1.0", "end-1c")
-        mat_no = self.mat_no.get("1.0", "end-1c")
-        score  = self.score.get("1.0", "end-1c")
+    def add_student():
+        name   = name_widget.get("1.0", "end-1c")
+        mat_no = mat_no_widget.get("1.0", "end-1c")
+        score  = score_widget.get("1.0", "end-1c")
         line   = f'{name},{mat_no},{score}\n'
-        file   = open(self.filepath, "a")
+        file   = open(filepath, "a")
         file.write(line)
         file.close()
 
         # clear input boxes
-        self.name.delete("1.0", "end-1c")
-        self.mat_no.delete("1.0", "end-1c")
-        self.score.delete("1.0", "end-1c")
+        name_widget.delete("1.0", "end-1c")
+        mat_no_widget.delete("1.0", "end-1c")
+        score_widget.delete("1.0", "end-1c")
     
-    def get_all_student_data(self):
-        file       = open(self.filepath, "r")
-        csv_reader = csv.reader(file)
-        data       = []
+    return add_student
 
-        # ignore header
-        next( csv_reader )
 
-        for row in csv_reader: data.append(row)
+def setup_filepath():
+        file = open("students.csv", "w")
+        file.write("Full name,Matric No.,Score\n")
         file.close()
-        return data
-
-        
