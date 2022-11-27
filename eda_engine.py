@@ -1,7 +1,7 @@
 from student_form import get_all_student_data
 
 def create_eda_engine(exploratory_analysis, s_above_70_widget):
-    def perform_eda():
+    def eda_engine():
         student_data           = get_all_student_data()
         highest_student        = get_highest_student(student_data)
         sorted_scores          = sort_student_data(student_data)
@@ -14,7 +14,7 @@ def create_eda_engine(exploratory_analysis, s_above_70_widget):
         # display list of students above 70
         display_list(s_above_70_widget, students_above_70_list)
     
-    return perform_eda
+    return eda_engine
 
 def get_highest_student(student_data):
     highest_student = ['', '', -1]
