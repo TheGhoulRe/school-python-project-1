@@ -35,3 +35,19 @@ When everything is set up, run the following command to start the application:
 ```bash
 python main.py
 ```
+
+# How to compile
+
+Compiling is the process of converting a high-level program (like this project) into machine code (an executable application). Once you compile, the project you'll be able to distrubute the application without the need for the users to have python installed in their system.
+
+To compile this application, you need to first install `pyinstaller`:
+```bash
+pip install -U pyinstaller
+```
+
+Then, run this command to compile the project:
+```bash
+pyinstaller main.py
+```
+
+Once you run the command above, `pyinstaller` creates a directory called *dist*. Inside the *dist* folder, there'll be a *main* project folder.
