@@ -14,7 +14,6 @@ class StudentRecords:
     def setup_filepath(self):
         self.filepath = "students.csv"
         if not os.path.exists(self.filepath):
-            self.write_file()
             file = open(self.filepath, "w")
             file.write("Full name,Matric No.,Score\n")
             file.close()
@@ -23,6 +22,7 @@ class StudentRecords:
         root = self.root
         root.geometry("500x500")
         root.title("Student Records")
+        root.resizable(False, False)
     
     def setup_ui(self):
         self.setup_text_labels()

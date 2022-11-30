@@ -1,2 +1,5 @@
 __pycache__/
 students.csv
+build/
+dist/
+*.spec

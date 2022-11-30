@@ -33,7 +33,7 @@ pip install tk
 
 When everything is set up, run the following command to start the application:
 ```bash
-python main.py
+python StudentRecords.py
 ```
 
 # How to compile
