@@ -16,10 +16,10 @@ python3 --version
 
 After running the command above, if you get `Python 3.x.x`, then there's no worry. It means you need to use `python3` instead of `python` to access python version 3. Example:
 ```bash
-python3 main.py
+python3 StudentRecords.py
 
 # instead of 
-python main.py
+python StudentRecords.py
 ```
 
 If you get an error running `python` or `python3`, or you don't get `Python 3.x.x` from either of them, then you need to install python on your system.
@@ -47,7 +47,7 @@ pip install -U pyinstaller
 
 Then, run this command to compile the project:
 ```bash
-pyinstaller main.py
+pyinstaller StudentRecords.py
 ```
 
 Once you run the command above, `pyinstaller` creates a directory called *dist*. Inside the *dist* folder, there'll be a *main* project folder.
