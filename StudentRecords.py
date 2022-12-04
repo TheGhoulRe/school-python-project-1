@@ -57,15 +57,15 @@ class StudentRecords:
     def setup_save_student_button(self):
         Button(
             self.root,
-            text="save student score",
-            font=("regular", 13),
+            text="Save student score",
+            font=("regular", 10),
             command=self.add_student,
         ).place(x=32, y=137, width=177, height=39)
 
     def setup_perform_eda_button(self):
         Button(
             self.root,
-            text="EDA for saved students",
+            text="Analyze all saved students",
             font=("regular", 10),
             command=self.calculate_eda
         ).place(x=291, y=137, width=177, height=39)
